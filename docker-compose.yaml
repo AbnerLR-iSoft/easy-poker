@@ -1,0 +1,48 @@
+name: easy-poker
+
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    ports:
+      - 3307:3306
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - easy-poker
+
+  api:
+    build:
+      context: ./easy-poker-node
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: ./easy-poker-node/.env
+    volumes:
+      - ./easy-poker-node:/app
+      - /app/node_modules
+    networks:
+      - easy-poker
+    depends_on:
+      - mysql
+
+  frontend:
+    build:
+      context: ./easy-poker-react
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: ./easy-poker-react/.env
+    volumes:
+      - ./easy-poker-react:/app
+      - /app/node_modules
+    networks:
+      - easy-poker
+    command: npm run dev -- --host
+    depends_on:
+      - api
+
+volumes:
+  mysql_data:
+networks:
+  easy-poker:
+    driver: bridge

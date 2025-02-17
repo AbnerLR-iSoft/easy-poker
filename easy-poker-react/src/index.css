@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&family=Merienda:wght@300..900&display=swap");
+@import "tailwindcss";
+
+:root {
+  margin: 0 auto;
+  padding: 0;
+  line-height: 1.5;
+}
+
+/* TITLE HEADINGS */
+.grenze-gotisch-400 {
+  font-family: "Grenze Gotisch", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.grenze-gotisch-500 {
+  font-family: "Grenze Gotisch", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.grenze-gotisch-600 {
+  font-family: "Grenze Gotisch", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.grenze-gotisch-700 {
+  font-family: "Grenze Gotisch", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.grenze-gotisch-800 {
+  font-family: "Grenze Gotisch", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* BODY TEXT */
+.merienda-400 {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.merienda-500 {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.merienda-600 {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.merienda-700 {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.merienda-800 {
+  font-family: "Merienda", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.bg-gradient-1 {
+  background-color: #c70ac7;
+  background-image: linear-gradient(0deg, #c70ac7 0%, #5e0898 100%);
+}
+
+.bg-gradient-2 {
+  background-color: #35016b;
+  background-image: linear-gradient(
+    43deg,
+    #35016b 0%,
+    #04134a 46%,
+    #50022e 100%
+  );
+}
+
+.bg-gradient-3 {
+  background-color: #386aeb;
+  background-image: linear-gradient(62deg, #386aeb 0%, #e91f89 100%);
+}
+
+.bg-gradient-4 {
+  background-color: #372bb5;
+  background-image: linear-gradient(62deg, #372bb5 0%, #4e136f 100%);
+}
+
+.bg-gradient-5 {
+  background-color: #151046;
+  background-image: linear-gradient(62deg, #151046 0%, #0e4b5f 100%);
+}
+
+.bg-gradient-6 {
+  background-color: #151046;
+  background-image: linear-gradient(62deg, #151046 0%, #0e4b5f 100%);
+}
+
+.bg-rectangle-1 {
+  background-color: #efd2cd;
+  opacity: 0.6;
+  background-image: repeating-linear-gradient(
+      45deg,
+      #33004b 25%,
+      transparent 25%,
+      transparent 75%,
+      #33004b 75%,
+      #33004b
+    ),
+    repeating-linear-gradient(
+      45deg,
+      #33004b 25%,
+      #efd2cd 25%,
+      #efd2cd 75%,
+      #33004b 75%,
+      #33004b
+    );
+  background-position: 0 0, 19px 19px;
+  background-size: 38px 38px;
+}
+
+.loader {
+  font-size: 48px;
+  color: #fff;
+  width: 1em;
+  height: 1em;
+  box-sizing: border-box;
+  background-color: currentcolor;
+  position: relative;
+  border-radius: 50%;
+  transform: rotateX(-60deg) perspective(1000px);
+}
+.loader:before,
+.loader:after {
+  content: "";
+  display: block;
+  position: absolute;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  animation: flowerFlow 1s ease-out infinite;
+}
+.loader:after {
+  animation-delay: 0.4s;
+}
+
+@keyframes flowerFlow {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg);
+    box-shadow: 0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
+      0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
+      0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor,
+      0 0 0 -0.5em currentcolor, 0 0 0 -0.5em currentcolor;
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(180deg);
+    box-shadow: -1em -1em 0 -0.35em currentcolor,
+      0 -1.5em 0 -0.35em currentcolor, 1em -1em 0 -0.35em currentcolor,
+      -1.5em 0 0 -0.35em currentcolor, 1.5em -0 0 -0.35em currentcolor,
+      -1em 1em 0 -0.35em currentcolor, 0 1.5em 0 -0.35em currentcolor,
+      1em 1em 0 -0.35em currentcolor;
+  }
+}
